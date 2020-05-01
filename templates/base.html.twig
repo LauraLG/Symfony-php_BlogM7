@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome to our M7 Blog!{% endblock %}</title>
+
+        <h1>Blog M7</h1>
+        <hr>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="main">
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+
+    <style>
+        .main{
+            margin: 2em 2em 2em 2em;
+            padding: 2em 2em 2em 2em;
+            background: #e8f6ff;
+            font-family: "Comic Sans MS";
+
+        }
+        h2{
+            color: darkblue;
+        }
+
+        tr,td{
+            padding: 1em 2em 1em 1em ;
+        }
+
+        th{
+            font-size: 18px;
+        }
+
+        button{
+            box-shadow:inset 1px -1px 6px 0px #ffffff;
+            background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+            background-color:#ffffff;
+            border-radius:26px;
+            border:1px solid #dcdcdc;
+            display:inline-block;
+            cursor:pointer;
+            color:#2d41c2;
+            font-family:Verdana;
+            font-size:16px;
+            font-weight:bold;
+            padding:13px 23px;
+
+
+
+
+        }
+
+        a.link{
+            box-shadow: 0px 10px 14px -7px #276873;
+            background:linear-gradient(to bottom, #b9e9fa 5%, #139bb0 100%);
+            background-color:#b9e9fa;
+            border-radius:15px;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:16px;
+            font-weight:bold;
+            padding:6px 25px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #3d768a;
+        }
+
+        .link:hover {
+            background:linear-gradient(to bottom, #139bb0 5%, #b9e9fa 100%);
+            background-color:#139bb0;
+        }
+
+        button:hover {
+            background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+            background-color:#f6f6f6;
+        }
+
+        button:active,
+        .link:active{
+            position:relative;
+            top:1px;
+        }
+
+
+        form{
+            padding: 0em 1em 2em 3em;
+        }
+
+        .required{
+            padding-right: 25px ;
+        }
+
+        input, select {
+            margin: 5px 0;
+        }
+
+        #usuario{
+             padding-bottom: 25px ;
+        }
+
+        input {
+            padding: 1px 1px 1px 1px;
+        }
+
+    </style>
+
+</html>

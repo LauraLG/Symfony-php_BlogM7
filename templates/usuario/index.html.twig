@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuario index{% endblock %}
+
+{% block body %}
+    <h2>Usuarios</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Fecha de creación</th>
+                <th>Datos completos</th>
+                <th>Editar</th>
+                <th> Articulos</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.username }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.password }}</td>
+                <td>{{ usuario.creationDate ? usuario.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="link" href="{{ path('usuario_show', {'id': usuario.id}) }}">ver</a>
+                </td>
+                <td>
+                    <a class="link" href="{{ path('usuario_edit', {'id': usuario.id}) }}">editar</a>
+                </td>
+                <td>
+                    <a class="link" href="{{ path('articulo_new') }}">ver</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6"> No se han encontrado ningunos datos </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="link" href="{{ path('usuario_new') }}">Crear nuevo usuario</a>
+{% endblock %}
