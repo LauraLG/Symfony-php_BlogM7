@@ -30,11 +30,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('usuario_index') }}">Volver atrás</a>
+    <a class="link" href="{{ path('usuario_index') }}">Volver a la lista de usuarios</a>
 
-    <a href="{{ path('usuario_edit', {'id': usuario.id}) }}"> Editar</a>
+    <a class="link" href="{{ path('usuario_edit', {'id': usuario.id}) }}"> Editar</a>
 
-    <a href="{{ path('show_articulos', {'id': usuario.id}) }}"> Ver todos los publicaciónes</a>
+    <a class="link" href="{{ path('show_articulos', {'id': usuario.id}) }}"> Ver todas las publicaciónes</a>
 
 
     {{ include('usuario/_delete_form.html.twig') }}

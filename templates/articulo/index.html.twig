@@ -25,14 +25,14 @@
                 <td>{{ articulo.contenido }}</td>
                 <td>{{ articulo.creationDate ? articulo.creationDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('usuario_show', {'id': articulo.usuario.id}) }}">{{ articulo.usuario }}</a>
+                    <a class="link" href="{{ path('usuario_show', {'id': articulo.usuario.id}) }}">{{ articulo.usuario }}</a>
 
                 </td>
                 <td>
-                    <a href="{{ path('articulo_show', {'id': articulo.id}) }}">ver</a>
+                    <a class="link" href="{{ path('articulo_show', {'id': articulo.id}) }}">ver</a>
                 </td>
                 <td>
-                    <a href="{{ path('articulo_edit', {'id': articulo.id}) }}">editar</a>
+                    <a class="link" href="{{ path('articulo_edit', {'id': articulo.id}) }}">editar</a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('articulo_new') }}">Crear nuevo articulo</a>
+    <a class="link" href="{{ path('articulo_new') }}">Crear nuevo articulo</a>
 {% endblock %}

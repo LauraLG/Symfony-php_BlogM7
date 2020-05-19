@@ -3,7 +3,8 @@
 {% block title %}Articulos{% endblock %}
 
 {% block body %}
-    <h2>Articulos escritos por usuario ""</h2>
+
+    <h2>Lista de articulos</h2>
 
     <table class="table">
         <thead>
@@ -19,6 +20,7 @@
         </thead>
         <tbody>
         {% for articulo in articulos %}
+
             <tr>
                 <td>{{ articulo.id }}</td>
                 <td>{{ articulo.titulo }}</td>
@@ -42,5 +44,5 @@
         {% endfor %}
     </table>
 
-    <a href="{{ path('articulo_new') }}">Crear nuevo articulo</a>
+    <a class="link" href="{{ path('articulo_new') }}">Crear nuevo articulo</a>
 {% endblock %}

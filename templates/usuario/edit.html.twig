@@ -5,9 +5,12 @@
 {% block body %}
     <h1>Editar los datos de usuario: {{ usuario.username }} </h1>
 
+    <div id="update">
     {{ include('usuario/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('usuario_index') }}"> Volver atrás </a>
-
+    </div>
+    <div id="delete">
     {{ include('usuario/_delete_form.html.twig') }}
+    </div>
+
+    <a class="link" href="{{ path('usuario_index') }}"> Volver a la lista de usuarios </a>
 {% endblock %}
