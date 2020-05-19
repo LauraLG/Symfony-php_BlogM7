@@ -59,23 +59,6 @@ class ArticuloController extends AbstractController
     }
 
 
-/*
-    public function showArticulos(ArticuloRepository $articuloRepository,$id): Response
-    {
-        $articulo = $this->getDoctrine()
-            ->getRepository(Articulo::class)
-            ->findOneByIdJoinedToArticulos($id);
-
-        $usuario = $articulo->getUsuario ();
-
-        return $this->render('articulo/show_articulos.html.twig', [
-            'articulo' => $articulo,
-            'articulos' => $articuloRepository->findAll(),
-            'usuario' => $usuario,
-        ]);
-    }
-    */
-
     /**
      * @Route("/list/{id}/list", name="show_articulos", methods={"GET"})
      */
@@ -89,10 +72,6 @@ class ArticuloController extends AbstractController
         ]);
 
       }
-
-
-
-
 
     /**
      * @Route("/{id}/edit", name="articulo_edit", methods={"GET","POST"})
