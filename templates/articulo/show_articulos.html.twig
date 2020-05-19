@@ -18,6 +18,7 @@
         </tr>
         </thead>
         <tbody>
+        {% for articulo in articulos %}
             <tr>
                 <td>{{ articulo.id }}</td>
                 <td>{{ articulo.titulo }}</td>
@@ -34,8 +35,11 @@
                     <a href="{{ path('articulo_edit', {'id': articulo.id}) }}">editar</a>
                 </td>
             </tr>
-
-        </tbody>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
     </table>
 
     <a href="{{ path('articulo_new') }}">Crear nuevo articulo</a>

@@ -77,13 +77,13 @@ class ArticuloController extends AbstractController
     */
 
     /**
-     * @Route("/{usuarioId}/list", name="show_articulos", methods={"GET"})
+     * @Route("/list/{id}/list", name="show_articulos", methods={"GET"})
      */
-    public function showArticulos(ArticuloRepository $articuloRepository,$usuarioId){
+    public function showArticulos(ArticuloRepository $articuloRepository,$id){
         return $this->render('articulo/show_articulos.html.twig', [
             'articulos' => $articuloRepository->findBy(
                 array(
-                    'usuario' =>$usuarioId
+                    'usuario' =>$id
                 )
             ),
         ]);
