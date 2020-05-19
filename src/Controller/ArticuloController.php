@@ -58,6 +58,42 @@ class ArticuloController extends AbstractController
         ]);
     }
 
+
+/*
+    public function showArticulos(ArticuloRepository $articuloRepository,$id): Response
+    {
+        $articulo = $this->getDoctrine()
+            ->getRepository(Articulo::class)
+            ->findOneByIdJoinedToArticulos($id);
+
+        $usuario = $articulo->getUsuario ();
+
+        return $this->render('articulo/show_articulos.html.twig', [
+            'articulo' => $articulo,
+            'articulos' => $articuloRepository->findAll(),
+            'usuario' => $usuario,
+        ]);
+    }
+    */
+
+    /**
+     * @Route("/{usuarioId}/list", name="show_articulos", methods={"GET"})
+     */
+    public function showArticulos(ArticuloRepository $articuloRepository,$usuarioId){
+        return $this->render('articulo/show_articulos.html.twig', [
+            'articulos' => $articuloRepository->findBy(
+                array(
+                    'usuario' =>$usuarioId
+                )
+            ),
+        ]);
+
+      }
+
+
+
+
+
     /**
      * @Route("/{id}/edit", name="articulo_edit", methods={"GET","POST"})
      */

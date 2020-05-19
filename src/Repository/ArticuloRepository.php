@@ -18,9 +18,28 @@ class ArticuloRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Articulo::class);
     }
+    /*
+        public function findOneByIdJoinedToArticulos(ArticuloRepository $articuloRepository,$usuarioId)
+        {
+            $entityManager = $this->getEntityManager();
+
+           $query = $entityManager->createQuery(
+                'SELECT art, usuario
+                    FROM App\Entity\Articulo art
+                    INNER JOIN art.usuario usuario
+                    WHERE usuario.id = :id'
+            )->setParameter('id', $usuarioId);
+
+
+            $articuloRepository->findBy(array('usuario_id' => $usuarioId));
+
+
+            return $query->getArrayResult();
+        }
+     */
 
     // /**
-    //  * @return Articulo[] Returns an array of Articulo objects
+    //  * @return Articulos[] Returns an array of Articulo objects
     //  */
     /*
     public function findByExampleField($value)

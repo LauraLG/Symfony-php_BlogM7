@@ -23,6 +23,10 @@
                 <th>Fecha de creación</th>
                 <td>{{ articulo.creationDate ? articulo.creationDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+            <tr>
+                <th>Autor</th>
+                <td>{{ articulo.usuario }}</td>
+            </tr>
         </tbody>
     </table>
 

@@ -47,4 +47,18 @@ class UsuarioRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findOneByIdJoinedToArticulos($usuarioId)
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT art, usuario
+                FROM App\Entity\Usuario art 
+                INNER JOIN art.usuario usuario
+                WHERE art.id = :id'
+        )->setParameter('id', $usuarioId);
+
+        return $query->getOneOrNullResult();
+    }
 }
